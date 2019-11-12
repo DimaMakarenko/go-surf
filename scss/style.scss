@@ -160,6 +160,72 @@ ul {
     }
   }
 }
+
+.quantity {
+  display: inline-block;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+  width: 45px;
+  height: 42px;
+  // float: left;
+  display: block;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 36px;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+.quantity-nav {
+  float: left;
+  position: static;
+  height: 42px;
+}
+
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  top: 50px;
+}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  right: 0px;
+}
+
+.quantity-button.quantity-down {
+  position: absolute;
+  right: 25px;
+}
+.star-list {
+  li {
+    display: inline-block;
+    margin-left: -25px;
+  }
+}
+
 /*
 
 
@@ -591,23 +657,27 @@ ul {
   }
 }
 
-.travel {
-  padding: 160px 0 280px;
+.holder {
+  padding: 120px 0 250px;
   background-image: url(../img/travel-cup.png);
   background-position: bottom right;
   background-repeat: no-repeat;
+  &.sleep {
+    background-image: url(../img/frangipani.png);
+    .holder-slider__descr {
+      background-size: contain;
+    }
+  }
   .container__title {
-    // margin-top: 80px;
     margin: 0;
     padding-top: 80px;
   }
   .header__slider-arrows {
-    // top: 0;
     margin-top: 160px;
     opacity: 0.5;
   }
 }
-.travel-slider {
+.holder-slider {
   &__head {
     background-repeat: no-repeat;
     background-position: top left;
@@ -621,12 +691,23 @@ ul {
     padding: 160px 0 0 132px;
     margin-top: -230px;
     .descr__head {
+      &.descr__head-sleep {
+        padding-right: 215px;
+      }
       position: relative;
-      padding-right: 78px;
+      padding-right: 80px;
       img {
         position: absolute;
         right: 0;
         top: 0;
+      }
+      .holder__star-list {
+        position: absolute;
+        right: 0;
+        top: 0;
+        img {
+          position: static;
+        }
       }
     }
   }
@@ -634,25 +715,24 @@ ul {
     text-align: center;
   }
 }
-.travel-slider__info {
+.holder-slider__info {
   display: flex;
   justify-content: space-around;
 }
-.travel-slider__info-item {
-  // min-height:200px;
+.holder-slider__info-item {
   margin-bottom: 166px;
   position: relative;
   width: 242px;
 }
-.travel-slider__info-title {
+.holder-slider__info-title {
   font-weight: 800;
   font-size: 40px;
   line-height: 36px;
   margin-left: 40px;
   position: relative;
-  span {
+  .holder-pricing__span {
+    font-size: 14px;
     font-weight: 400;
-    font-size: 18px;
     line-height: 22px;
     letter-spacing: 5.25px;
     opacity: 0.75;
@@ -661,12 +741,12 @@ ul {
     bottom: -25px;
   }
 }
-.travel-slider__info-subtitle {
+.holder-slider__info-subtitle {
   font-size: 18px;
   line-height: 22px;
   letter-spacing: 8px;
   opacity: 0.5;
-  
+
   transform: rotate(-90deg);
   position: absolute;
   top: 95px;
